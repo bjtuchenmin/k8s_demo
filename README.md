@@ -12,7 +12,7 @@ docker push dockerchenmin/tomcat_image:v2
 
 ## 用 docker 启动容器
 ```
-docker run <IMAGE_ID> -p:8082:80
+docker run --name=tomcat_docker -p 8082:8080 <IMAGE_ID>
 ```
 
 ## 在集群中启动 Pod
