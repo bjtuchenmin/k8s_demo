@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: tomcat
+  template:
+    metadata:
+      labels:
+        name: tomcat
+    spec:
+      containers:
+        - name: tomcat
+          image: dockerchenmin/tomcat_image:v2
+          tty: true
+          ports:
+            - containerPort: 8080

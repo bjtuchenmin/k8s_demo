@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ng
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: ng
+  template:
+    metadata:
+      labels:
+        name: ng
+    spec:
+      containers:
+        - name: ng
+          image: dockerchenmin/nginx:v1
+          ports:
+            - containerPort: 80

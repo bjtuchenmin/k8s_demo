@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcathost
+spec:
+  # 使用默认的 ClusterIP，仅用于集群内访问
+  type: ClusterIP
+  ports:
+    - port: 8080
+  selector:
+    name: tomcat
