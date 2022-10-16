@@ -3,11 +3,18 @@
 ```
 docker build -t dockerchenmin/tomcat_image:v2 .
 ```
+
 ## 推送镜像
 ```
 docker login
 docker push dockerchenmin/tomcat_image:v2
 ```
+
+## 用 docker 启动容器
+```
+docker run <IMAGE_ID> -p:8082:80
+```
+
 ## 在集群中启动 Pod
 ```
 kubectl run tomcat --image=dockerchenmin/tomcat_image:v2 --image-pull-policy=IfNotPresent -o yaml > pod_tomcat.yaml
