@@ -20,3 +20,8 @@ docker run --name=tomcat_docker -p 8082:8080 <IMAGE_ID>
 kubectl run tomcat --image=dockerchenmin/tomcat_image:v2 --image-pull-policy=IfNotPresent -o yaml > pod_tomcat.yaml
 ```
 
+## 启动 Pod 后进行端口转发
+```
+kubectl port-forward tomcat 8083:8080
+```
+
